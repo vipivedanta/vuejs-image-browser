@@ -1,10 +1,18 @@
 <template>
-    <h3>Welcome to image browser</h3>
+    <div class="container">
+        <AppHeader></AppHeader>
+    </div>
 </template>
 
 <script>
+
+import AppHeader from './components/templates/AppHeader';
+
 export default {
-    name : 'App'
+    name : 'App',
+    components : {
+        AppHeader
+    }
 }
 </script>
 
