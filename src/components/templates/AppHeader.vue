@@ -8,8 +8,21 @@
             <nav class="navbar navbar-expand-lg">
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                <li class="nav-item active">
+                
+                <li v-if="!isLoggedIn" class="nav-item active">
                     <a class="nav-link" href="#" @click="login">Login</a>
+                </li>
+
+                <li v-if="isLoggedIn" class="nav-item">
+                    <a class="nav-link" href="#">Upload images</a>
+                </li>
+
+                <li v-if="isLoggedIn" class="nav-item">
+                    <a class="nav-link" href="#">Browse Images</a>
+                </li>
+
+                <li v-if="isLoggedIn" class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
                 </li>
                
               </ul>
@@ -20,11 +33,14 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 export default {
     name : 'AppHeader',
     methods : {
         ...mapActions(['login'])
+    },
+    computed : {
+        ...mapGetters(['isLoggedIn'])
     }
 }
 </script>
