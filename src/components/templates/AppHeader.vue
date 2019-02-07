@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="#" @click="login">Login</a>
                 </li>
                
               </ul>
@@ -20,8 +20,12 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
-    name : 'AppHeader'
+    name : 'AppHeader',
+    methods : {
+        ...mapActions(['login'])
+    }
 }
 </script>
 
