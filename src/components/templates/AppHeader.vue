@@ -22,7 +22,7 @@
                 </li>
 
                 <li v-if="isLoggedIn" class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="#" @click="logout">Logout</a>
                 </li>
                
               </ul>
@@ -37,7 +37,7 @@ import { mapActions, mapGetters } from 'vuex';
 export default {
     name : 'AppHeader',
     methods : {
-        ...mapActions(['login'])
+        ...mapActions(['login','logout'])
     },
     computed : {
         ...mapGetters(['isLoggedIn'])
