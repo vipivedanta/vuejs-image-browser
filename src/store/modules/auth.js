@@ -1,5 +1,6 @@
 import api from '../../api/imgur';
 import qs from 'qs';
+import VueRouter from '../../routes';
 
 const state = {
     token : null
@@ -16,9 +17,11 @@ const actions = {
     finalizeLogin : ({commit},hash) => {
         const query = qs.parse(hash.replace('#',''));
         commit('setToken',query.access_token);
+        VueRouter.push('/');
     },
     logout : ({commit}) => {
-        commit('setToken',null)
+        commit('setToken',null);
+        VueRouter.push('/thank-you');
     }
 }
 
