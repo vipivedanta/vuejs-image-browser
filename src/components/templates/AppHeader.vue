@@ -14,11 +14,15 @@
                 </li>
 
                 <li v-if="isLoggedIn" class="nav-item">
-                    <a class="nav-link" href="#">Upload images</a>
+                    <router-link to="/" class="nav-link">Home</router-link>
                 </li>
 
                 <li v-if="isLoggedIn" class="nav-item">
-                    <a class="nav-link" href="#">Browse Images</a>
+                    <router-link to="/upload-image" class="nav-link">Upload images</router-link>
+                </li>
+
+                <li v-if="isLoggedIn" class="nav-item">
+                    <router-link to="/browse-images" class="nav-link" href="#">Browse Images</router-link>
                 </li>
 
                 <li v-if="isLoggedIn" class="nav-item">
